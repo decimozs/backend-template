@@ -4,6 +4,8 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
+    "db:start": "docker compose -f ./docker-compose-db.yaml up -d",
+    "db:stop": "docker compose -f ./docker-compose-db.yaml down",
     "db:generate": "pnpm drizzle-kit generate",
     "db:migrate": "pnpm drizzle-kit migrate",
     "db:check": "pnpm drizzle-kit check",

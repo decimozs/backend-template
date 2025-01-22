@@ -1,16 +1,16 @@
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
+import { envConfig } from './config/env.ts';
 
 const app = new Hono();
 
 app.get('/', c => {
-  return c.text('Hello Hono! atsdasfasfasfasfasfasfa');
+  return c.text('Hello Hono!');
 });
 
-const port = 3000;
-console.log(`Backend is running on http://localhost:${port}`);
+console.log(`Backend is running on http://localhost:${envConfig.PORT}`);
 
 serve({
   fetch: app.fetch,
-  port,
+  port: envConfig.PORT,
 });

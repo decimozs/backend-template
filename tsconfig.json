@@ -19,7 +19,7 @@
     "types": [
       "node"
     ],
-      "moduleResolution": "Bundler",
+      "moduleResolution": "NodeNext",
     "outDir": "./dist"
   }
 }

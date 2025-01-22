@@ -22,7 +22,7 @@
     ],
     "moduleResolution": "NodeNext",
     "outDir": "./dist",
-    "include": ["**/*.ts"],
-    "exclude": ["./node_modules", "./dist", "vitest.config.ts"]
-  }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["./node_modules", "./dist", "vitest.config.ts"]
 }

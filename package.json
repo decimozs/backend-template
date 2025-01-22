@@ -11,13 +11,22 @@
     "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
     "check:spell": "git diff --name-only | cspell --no-summary --no-progress --no-must-find-files --file-list stdin",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pre-commit": "concurrently \"lint-staged --allow-empty\" \"pnpm check:spell\""
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@hono/node-server": "^1.13.7",
     "hono": "^4.6.17"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.18.0",
     "@types/node": "^20.11.17",
@@ -28,6 +37,7 @@
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "husky": "^9.1.7",
+    "lint-staged": "^15.4.1",
     "prettier": "^3.4.2",
     "tsx": "^4.7.1"
   },
